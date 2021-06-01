@@ -1,0 +1,29 @@
+
+body{
+	font-family: 'Prompt', sans-serif;
+}
+.hh{
+	color: #0A9E44;
+}
+
+/* th{
+	color: #0E56A2;
+} */
+td{
+color: #105F83;
+}
+
+.csstoday{
+	color: #DF9809;
+	font-size: 1.4em;
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+  }
+  
+  th, td {
+	text-align: left;
+	padding: 8px;
+  }
