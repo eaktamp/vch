@@ -56,7 +56,7 @@
             console.log('I was closed by the timer')
           }
         }).then(function() {
-            window.location = 'index.php';
+            window.location = 'register.php';
         })
         </script>";
     } else {
@@ -65,9 +65,9 @@
             icon: 'error',
             title: 'เคยบันทึกข้อมูลนี้ไปแล้ว',
             showConfirmButton: false,
-            timer: 1500
+            timer: 1000
           }).then(function() {
-            window.location = 'index.php';
+            window.location = 'register.php';
         })
         </script>";
     }
