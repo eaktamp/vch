@@ -23,10 +23,11 @@
 
     $insertdata = new CheckPatient;
     $query = $insertdata->Insertregisterpt($vn, $vstdate, $hn, $pname, $fname, $lname);
-    $query2 = $insertdata->Insertptstamp($vn,'1', $stamp_date, $stamp_time, $stamp_time);
+    // $query2 = $insertdata->Insertptstamp($vn,'1', $stamp_date, $stamp_time, $stamp_time);
    
 
-    if ($query && $query2) {
+    if ($query //&& $query2
+    ) {
         echo "<script>
         let timerInterval
         Swal.fire({
