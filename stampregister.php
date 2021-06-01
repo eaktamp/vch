@@ -35,6 +35,7 @@
                         $fname = $row['fname'];
                         $lname = $row['lname'];
                         $vstdate = $row['vstdate'];
+                        $cid = $row['cid'];
                     ?>
 
                 <h5 class="text-center mb-5">
@@ -44,6 +45,7 @@
                     <?php echo 'clinic. ' . $row['clinic']; ?><br>
                     <?php echo 'visit no. ' .  $row['vn']; ?><br>
                     <?php echo 'เลขประจำตัวผู้ป่วย (hn) : ' .  $hn; ?><br>
+                    <?php echo 'cid  : ' .  $cid; ?><br>
                     <hr>
                 </h5>
 
@@ -62,6 +64,7 @@
                     <input type="text" hidden name="pname" value="<?= $pname ?>">
                     <input type="text" hidden name="fname" value="<?= $fname ?>">
                     <input type="text" hidden name="lname" value="<?= $lname ?>">
+                    <input type="text" hidden name="cid" value="<?= $cid ?>">
                     <button type="submit" value="submit" name="submit" class="btn btn-primary btn-lg btn-block" style="height: 250px;" <?php if ($rowcc < 1) echo "disabled" ?>>ลงทะเบียนฉีดวัคซีน Covid 19</button>
                     <button type="reset" class="btn btn-secondary btn-lg  btn-block " style="height: 150px; " onclick="location.href='register.php'">ยกเลิก</button>
                 </div>

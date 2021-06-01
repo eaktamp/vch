@@ -12,7 +12,7 @@
 <body onclick="getfocus()">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <div class="form__group">
-        <h1>สแกน Barcode visit number(vn) ลงทะเบียน</h1>
+        <h1>สแกน Barcode หรือกรอก visit number(vn) ลงทะเบียน</h1>
         <form name="myForm" id="myForm" target="" action="stampregister.php" method="POST">
             <label for="text">สแกนหมายเลข VN(visit number)</label>
             <input name="text" value="" type="text" class="form__input" id="text" maxlength="15" placeholder=" Scan Barcode " required="" autocomplete=off autofocus onKeyUp="if(this.value*1!=this.value) this.value='' ;" />

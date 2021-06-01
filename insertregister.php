@@ -18,11 +18,12 @@
     $pname = $_POST['pname'];
     $fname = $_POST['fname'];
     $lname = $_POST['lname'];
+    $cid = $_POST['cid'];
     $stamp_date = DATE('Y-m-d');
     $stamp_time = DATE('H:i:s');
 
     $insertdata = new CheckPatient;
-    $query = $insertdata->Insertregisterpt($vn, $vstdate, $hn, $pname, $fname, $lname);
+    $query = $insertdata->Insertregisterpt($vn, $vstdate, $hn, $pname, $fname, $lname,$cid);
     // $query2 = $insertdata->Insertptstamp($vn,'1', $stamp_date, $stamp_time, $stamp_time);
    
 

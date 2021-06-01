@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,26 +8,32 @@
     <link rel="stylesheet" href="css/style.css">
     <title>*****************</title>
 </head>
-<body>
-<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
-<div class="form__group">
-<form name="myForm" id="myForm" target="" action="stamp.php" method="POST">
-        <input name="text" value="" maxlength="16"  type="text" class="form__input" id="text" placeholder=" Scan Barcode " required="" autocomplete=off  autofocus  onKeyUp="if(this.value*1!=this.value) this.value='' ;" />
-</form>
-</div> 
-<script type="text/javascript">
-    window.onload=function(){
-        var auto = setTimeout(function(){ autoRefresh(); }, 100);
-        function submitform(){
-      //    alert('test');
-          document.forms["myForm"].submit();
+<body>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+    <div class="form__group">
+        <form name="myForm" id="myForm" target="" action="insertstampzone.php" method="POST">
+            <h1>เช็ค point ฉีดวัคซีน</h1>
+            <input name="text" value="" maxlength="16" type="text" name="vn" class="form__input" id="text" placeholder=" Scan Barcode " required="" autocomplete=off autofocus onKeyUp="if(this.value*1!=this.value) this.value='' ;" />
+        </form>
+    </div>
+    <script type="text/javascript">
+        window.onload = function() {
+            var auto = setTimeout(function() {
+                autoRefresh();
+            }, 100);
+
+            function submitform() {
+                //    alert('test');
+                document.forms["myForm"].submit();
+            }
+            // function autoRefresh(){
+            //    clearTimeout(auto);
+            //    auto = setTimeout(function(){ submitform(); autoRefresh(); }, 10000);
+            // }
         }
-        // function autoRefresh(){
-        //    clearTimeout(auto);
-        //    auto = setTimeout(function(){ submitform(); autoRefresh(); }, 10000);
-        // }
-    }
-</script>
+    </script>
 </body>
+
 </html>

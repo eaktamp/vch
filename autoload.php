@@ -32,7 +32,7 @@ class CheckPatient
 
 	public function checkvn($vn)
 	{
-		$sql = "SELECT ov.vn,ov.hn,ov.vstdate,ov.vsttime,
+		$sql = "SELECT ov.vn,ov.hn,ov.vstdate,ov.vsttime,pt.cid,
 		pt.pname,pt.fname,pt.lname,ksk.department as clinic
 		FROM ovst ov
 		INNER JOIN patient pt on pt.hn = ov.hn
@@ -45,9 +45,9 @@ class CheckPatient
 		return  $query;
 	}
 
-	public function Insertregisterpt($value1, $value2, $value3, $value4, $value5, $value6)
+	public function Insertregisterpt($value1, $value2, $value3, $value4, $value5, $value6, $value7)
 	{
-		$sqlinsert  = "INSERT INTO screen_register (vn,vstdate,hn,pname,fname,lname) values ('$value1','$value2','$value3','$value4','$value5','$value6');";
+		$sqlinsert  = "INSERT INTO screen_register (vn,vstdate,hn,pname,fname,lname,cid) values ('$value1','$value2','$value3','$value4','$value5','$value6','$value7');";
 		$queryi = mysqli_query($this->mycon, $sqlinsert);
 		return $queryi;
 	}
@@ -59,13 +59,36 @@ class CheckPatient
 		$rscountvn = mysqli_fetch_array($querys);
 		$rscountvn['cc'];
 		if($rscountvn['cc'] < '1'){
-			 $sqlinsert  = " INSERT INTO vc_stampdata (vn,c_point,stamp_date,stamp_time,vc_status,vc_check,vc_zone,check_datetime) VALUES ('$vn','$c_point','$stamp_date','$stamp_time','Y','OK','Cpa10665','0')";
+			$sqlinsert  = " INSERT INTO vc_stampdata (vn,c_point,stamp_date,stamp_time,vc_status,vc_check,vc_zone,check_datetime) VALUES ('$vn','$c_point','$stamp_date','$stamp_time','Y','OK','Cpa10665','0')";
 			$queryi = mysqli_query($this->mycon, $sqlinsert);
 			return $queryi;
 		}else{	return false;}
 	
 
 	
+	}
+
+	public function checkRegistervn($vn){
+		$select = "select count(*)as cc from screen_register where vn = '$vn'";
+		$query = mysqli_query($this->mycon,$select);
+		$checkvn = mysqli_fetch_assoc($query );
+		if($checkvn['cc'] > 0 ){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
+
+	public function stamp_vaccine_point($vn){
+		$updatestatus = "UPDATE  screen_register SET status_ck_vc = 'Y' where vn  = '$vn'";
+		$query = mysqli_query($this->mycon,$updatestatus);
+		if($query){
+			return true;
+		}else{
+			return false;
+		}
+
 	}
 
 
